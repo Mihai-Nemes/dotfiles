@@ -1,2 +1,4 @@
-# Local personal Claude workspace
-.claude/
+.claude.json          # OAuth tokens, MCP auth, API keys — NEVER commit this
+.claude.json.lock
+.claude/investigation-artifacts
+*.log

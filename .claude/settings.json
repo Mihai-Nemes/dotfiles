@@ -1,0 +1,13 @@
+{
+  "env": {
+    "MY_VAR": "value"
+  },
+  "permissions": {
+    "allow": [
+      "Bash(t:*)",
+      "Bash(m:*)",
+      "Bash(dc:*)"
+    ]
+  },
+  "theme": "dark"
+}

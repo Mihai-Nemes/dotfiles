@@ -1,36 +1,35 @@
-# Dotfiles
+# dotfiles
 
-This repository stores personal shell and developer environment configuration files,
-plus a setup script to apply them quickly on a new machine.
+Personal configuration files.
 
-## Scope
+## Files
 
-Included in this repository:
-- Core dotfiles used across environments (for example `.bashrc`, `.gitconfig`).
-- Setup automation in `setup.sh` to symlink dotfiles into `$HOME`.
-- Project documentation and maintenance files.
+### `.rover`
 
-Not included in this repository:
-- Secrets, tokens, private keys, or machine-specific credentials.
-- Large binaries or unrelated tooling assets.
-- Personal local investigation notes and Claude workspace artifacts under `.claude/` (ignored by git).
+A dotfile for the Rover project that stores **artifacts** and **skills**.
 
-## Setup
+**Structure:**
+- `project` – project name and description
+- `artifacts` – list of project deliverables, build outputs, and assets
+- `skills` – list of technologies and competencies used in the project
 
-Run the setup script from the repository root:
+**Usage:**
 
-```bash
-./setup.sh
+Edit `.rover` to track your rover project artifacts and skills:
+
+```yaml
+artifacts:
+  - name: rover-firmware
+    type: firmware
+    version: 1.0.0
+    path: ./firmware
+    description: Main firmware for the rover
+
+skills:
+  - name: Python
+    level: intermediate
+    category: programming
+  - name: ROS
+    level: beginner
+    category: robotics
 ```
-
-The script:
-- Detects the repository path.
-- Backs up existing files in `$HOME` before replacing.
-- Creates symlinks from repository dotfiles to `$HOME`.
-
-## Maintenance
-
-When adding a new dotfile:
-1. Add the file to this repository.
-2. Add its filename to the `DOTFILES` array in `setup.sh`.
-3. Re-run `./setup.sh`.
